@@ -116,7 +116,7 @@ class SCRAMTarget:
         for i,layer in enumerate(self.layers):
             #tranmission to High Resolution Crystal
             if rear:
-                intensity_layer = (layer[5])/layer[4]*(1-trans_layers[i])
+                intensity_layer = (layer[5]+layer[7]*self.scale_fluor(layer[0],layer[1],fh,Th)*100)/layer[4]*(1-trans_layers[i])
                 transmission = np.prod(trans_layers[i+1:],axis = 0)
 
             #transmission to Von Hamos crystal
