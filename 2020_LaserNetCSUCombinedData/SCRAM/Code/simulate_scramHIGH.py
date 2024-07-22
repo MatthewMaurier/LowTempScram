@@ -84,6 +84,7 @@ class SCRAMTarget:
     '''
     def scale_fluor(self,D,Te,hotfrac,Th):
         fh_tab = self.fh((D,Te))
+        fh_tab = 1.46e-03
         fj_bin = np.exp(self.fj((np.log(D),np.log(Te))))
         scaling = fj_bin*self.f_greater(Th)*hotfrac/(0.8*fh_tab)
         return scaling 

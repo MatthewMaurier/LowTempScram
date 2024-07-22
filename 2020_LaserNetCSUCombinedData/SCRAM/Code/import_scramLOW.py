@@ -53,6 +53,7 @@ class SCRAM:
                         k_fluor[ix][jx] = k_values.to_numpy()[:,mx]
                         hot_electron_fraction[ix][jx] = mdet.to_numpy()[0][mx]
                         factor_fluor[ix][jx] = KPfac1.to_numpy()[0][mx]
+
         en_j = self.df.iloc[23:3356, :].reset_index(drop=True).iloc[:,0].astype(float) / 1000
         en_k = self.df.iloc[3357:, :].reset_index(drop=True).iloc[:,0].astype(float) / 1000
 
